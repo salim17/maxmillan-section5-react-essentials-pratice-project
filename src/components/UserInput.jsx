@@ -1,21 +1,8 @@
-import { useState } from "react";
+console.log("UserInput  File loading....");
+export default function UserInput({onChange, userInput}) {
 
-export default function UserInput() {
-  const [userInput, setUserInput] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturns: 6,
-    duration: 10,
-  });
-
-  function handleChange(inputIdentifier, newValue) {
-    setUserInput((prevUserInput) => {
-      return {
-        ...prevUserInput,
-        [inputIdentifier]: newValue,
-      };
-    });
-  }
+    
+  console.log("UserInput component loading....")
 
   return (
     <section id="user-input">
@@ -27,7 +14,7 @@ export default function UserInput() {
             required
             value={userInput.initialInvestment}
             onChange={(event) =>
-              handleChange("initialInvestment", event.target.value)
+                onChange("initialInvestment", event.target.value)
             }
           />
         </p>
@@ -38,7 +25,7 @@ export default function UserInput() {
             required
             value={userInput.annualInvestment}
             onChange={(event) =>
-              handleChange("annualInvestment", event.target.value)
+                onChange("annualInvestment", event.target.value)
             }
           />
         </p>
@@ -52,7 +39,7 @@ export default function UserInput() {
             required
             value={userInput.expectedReturns}
             onChange={(event) =>
-              handleChange("expectedReturns", event.target.value)
+                onChange("expectedReturns", event.target.value)
             }
           />
         </p>
@@ -63,7 +50,7 @@ export default function UserInput() {
             required
             value={userInput.duration}
             onChange={(event) =>
-              handleChange("duration", event.target.value)
+                onChange("duration", event.target.value)
             }
           />
         </p>
