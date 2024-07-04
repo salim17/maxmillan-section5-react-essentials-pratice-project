@@ -12,7 +12,7 @@ function App() {
   const [userInput, setUserInput] = useState({
     initialInvestment: 10000,
     annualInvestment: 1200,
-    expectedReturns: 6,
+    expectedReturn: 6,
     duration: 10,
   });
 
@@ -20,7 +20,7 @@ function App() {
     setUserInput((prevUserInput) => {
       return {
         ...prevUserInput,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue, // + converts string to number.. since event.target.value is always a string
       };
     });
   }
